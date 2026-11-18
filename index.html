@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tangible Gráfica Digital · Curitiba</title>
+<meta name="description" content="Gráfica digital em Curitiba com atendimento fácil: peça pelo WhatsApp, a gente monta o orçamento, confere sua arte e avisa quando estiver pronto.">
+<link rel="icon" href="img/favicon.png">
+<style>
+@font-face{font-family:Poppins;font-weight:400;src:url(fonts/Poppins-Regular.ttf)}
+@font-face{font-family:Poppins;font-weight:500;src:url(fonts/Poppins-Medium.ttf)}
+@font-face{font-family:Poppins;font-weight:700;src:url(fonts/Poppins-Bold.ttf)}
+:root{--verde:#0b6b3a;--verde2:#128c4a;--amarelo:#ffd400;--rosa:#e6007e;--azul:#0095da;--tinta:#1d1d1b;--fundo:#f6f7f4;--card:#fff;--linha:#e3e6df}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:18px/1.55 Poppins,system-ui,sans-serif;color:var(--tinta);background:var(--fundo)}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
+header.top img{height:46px;width:auto;display:block}
+.btn{display:inline-flex;align-items:center;gap:10px;border:0;border-radius:999px;padding:16px 28px;font:700 19px Poppins,sans-serif;text-decoration:none;color:#fff;cursor:pointer;box-shadow:0 6px 0 rgba(0,0,0,.18);transition:transform .1s}
+.btn:active{transform:translateY(3px);box-shadow:0 3px 0 rgba(0,0,0,.18)}
+.btn.rosa{background:var(--rosa)}.btn.azul{background:var(--azul)}.btn.verde{background:var(--verde2)}
+.btn.pq{padding:11px 20px;font-size:16px}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#0a5d33,#12904c);color:#fff;border-radius:34px;padding:56px 48px 92px;margin-top:6px}
+.hero .tag{display:inline-block;background:var(--amarelo);color:#1d1d1b;font-weight:700;font-size:15px;padding:7px 16px;border-radius:999px}
+.hero h1{font-size:clamp(34px,5.4vw,60px);line-height:1.08;margin:18px 0 18px;max-width:640px;letter-spacing:-.5px}
+.hero p{font-size:20px;max-width:560px;margin:0 0 28px;opacity:.97}
+.hero .acoes{display:flex;flex-wrap:wrap;gap:14px}
+.hero .capi{position:absolute;right:26px;bottom:34px;height:min(58%,330px);width:auto}
+.hero .capi.b{right:230px;height:min(46%,250px);bottom:34px}
+.faixa{position:absolute;left:0;right:0;bottom:0;height:22px;background:repeating-linear-gradient(-45deg,#ffd400 0 22px,#1d1d1b 22px 44px)}
+.bolha{position:absolute;background:#fff;color:#1d1d1b;font-weight:700;font-size:14px;padding:9px 14px;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.18)}
+.bolha.um{right:300px;top:46px}.bolha.dois{right:60px;top:36px}
+.grade{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:22px 0}
+.card{background:var(--card);border:1px solid var(--linha);border-radius:20px;padding:22px}
+.card h3{margin:0 0 6px;font-size:19px}
+.card p{margin:0;font-size:15px;color:#4a4d46}
+.card .ic{font-size:30px;display:block;margin-bottom:6px}
+h2{font-size:clamp(26px,3.4vw,36px);margin:46px 0 8px;letter-spacing:-.3px}
+.sub{margin:0 0 22px;color:#4a4d46}
+.passos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:p}
+.passo{background:var(--card);border:2px solid var(--linha);border-radius:20px;padding:22px 22px 24px;position:relative}
+.passo::before{counter-increment:p;content:counter(p);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--verde2);color:#fff;font-weight:700;font-size:20px;margin-bottom:10px}
+.passo h3{margin:0 0 4px;font-size:18px}.passo p{margin:0;font-size:15px;color:#4a4d46}
+.faz{display:flex;flex-wrap:wrap;gap:10px}
+.faz span{background:#fff;border:1px solid var(--linha);border-radius:999px;padding:9px 18px;font-weight:500;font-size:16px}
+.duas{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:stretch}
+.visita{background:#fff;border:1px solid var(--linha);border-radius:24px;padding:28px}
+.visita dl{margin:0}.visita dt{font-weight:700;margin-top:12px}.visita dd{margin:0;color:#4a4d46}
+.chamada{position:relative;background:linear-gradient(135deg,#0a5d33,#12904c);color:#fff;border-radius:24px;padding:30px 28px;overflow:hidden}
+.chamada h3{font-size:26px;line-height:1.15;margin:0 0 10px}
+.chamada p{margin:0 0 20px;max-width:300px}
+.chamada img{position:absolute;right:10px;bottom:0;height:200px}
+footer{margin:56px 0 30px;padding-top:22px;border-top:1px solid var(--linha);font-size:14px;color:#6a6d66;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+.zap-fixo{position:fixed;right:18px;bottom:18px;z-index:9}
+@media(max-width:900px){
+ .grade,.passos{grid-template-columns:repeat(2,1fr)}
+ .duas{grid-template-columns:1fr}
+ .hero{padding:34px 24px 230px}
+ .hero .capi{height:190px;right:50%;margin-right:-95px;bottom:30px}.hero .capi.b{display:none}
+ .bolha.um{display:none}.bolha.dois{right:14px;top:auto;bottom:200px}
+}
+@media(max-width:560px){
+ body{font-size:17px}
+ .grade,.passos{grid-template-columns:1fr}
+ header.top .btn{padding:10px 16px;font-size:15px}
+ .chamada{padding-bottom:190px}.chamada img{height:160px;right:50%;margin-right:-60px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <img src="img/logo.webp" alt="Tangible Gráfica Digital">
+  <a class="btn verde pq" href="https://wa.me/554191903937?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">💬 Chamar no WhatsApp</a>
+</header>
+
+<section class="hero">
+  <span class="tag">Atendimento rápido pelo WhatsApp</span>
+  <h1>Peça sua impressão sem dor de cabeça.</h1>
+  <p>Você conta o que precisa. A gente monta o orçamento, confere sua arte antes de imprimir e avisa quando estiver pronto.</p>
+  <div class="acoes">
+    <a class="btn rosa" href="https://wa.me/554191903937?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">💬 Pedir orçamento agora</a>
+    <a class="btn azul" href="#como">Como funciona</a>
+  </div>
+  <span class="bolha um">Arte conferida ✔</span>
+  <span class="bolha dois">Pedido pronto! 📦</span>
+  <img class="capi b" src="img/capi_entregadora.webp" alt="">
+  <img class="capi" src="img/capi_atendente.webp" alt="Capivara atendente da Tangible">
+  <div class="faixa"></div>
+</section>
+
+<section class="grade" aria-label="Vantagens do atendimento">
+  <div class="card"><span class="ic">⚡</span><h3>Orçamento rápido</h3><p>Mande a ideia pelo WhatsApp. Você recebe o valor e o prazo sem precisar ligar nem esperar.</p></div>
+  <div class="card"><span class="ic">🔎</span><h3>Arte conferida</h3><p>Olhamos seu arquivo antes de imprimir e avisamos se algo precisa de ajuste. Menos erro, menos retrabalho.</p></div>
+  <div class="card"><span class="ic">🔔</span><h3>Aviso quando ficar pronto</h3><p>Você não precisa ficar perguntando. Quando o pedido estiver pronto, a gente chama.</p></div>
+  <div class="card"><span class="ic">🛵</span><h3>Entrega em Curitiba</h3><p>Frete fixo de R$ 15 para qualquer lugar da cidade. Ou retire aqui, no Centro.</p></div>
+</section>
+
+<h2 id="como">Como funciona</h2>
+<p class="sub">Quatro passos, tudo pelo celular.</p>
+<section class="passos">
+  <div class="passo"><h3>Fale com a gente</h3><p>Chame no WhatsApp e conte o que precisa e a quantidade.</p></div>
+  <div class="passo"><h3>Receba o orçamento</h3><p>Valor e prazo claros, sem letra miúda.</p></div>
+  <div class="passo"><h3>Mande a arte</h3><p>Ou peça ajuda. A gente confere antes de imprimir.</p></div>
+  <div class="passo"><h3>Pague por PIX e retire</h3><p>Avisamos quando estiver pronto. Retire ou receba em casa.</p></div>
+</section>
+
+<h2>O que a gente faz</h2>
+<p class="sub">Se não está na lista, pergunte. Se a gente não faz, indicamos quem faz.</p>
+<div class="faz">
+  <span>Cartões de visita</span><span>Adesivos e etiquetas</span><span>Rótulos</span><span>Caixinhas e embalagens</span>
+  <span>Agendas e cadernos</span><span>Apostilas</span><span>Banners e fachadas</span><span>Brindes e sublimação</span><span>Material para escolas</span><span>Papelaria da sua empresa</span>
+</div>
+
+<h2>Venha nos visitar</h2>
+<p class="sub">Atendimento presencial e online.</p>
+<section class="duas">
+  <div class="visita">
+    <dl>
+      <dt>📍 Endereço</dt><dd>Rua Francisco Torres, 268 · Centro · Curitiba/PR</dd>
+      <dt>🕘 Horário</dt><dd>Segunda a sexta, das 9h às 19h</dd>
+      <dt>💬 WhatsApp</dt><dd>(41) 9190-3937</dd>
+    </dl>
+    <p style="margin:20px 0 0"><a class="btn azul pq" href="https://www.google.com/maps/search/?api=1&query=Rua+Francisco+Torres+268+Curitiba" target="_blank" rel="noopener">📍 Ver no mapa</a></p>
+  </div>
+  <div class="chamada">
+    <h3>Ninguém fica sem resposta.</h3>
+    <p>Mande sua mensagem. A gente responde e acompanha até o pedido chegar na sua mão.</p>
+    <a class="btn rosa" href="https://wa.me/554191903937?text=Ol%C3%A1!%20Vim%20pelo%20site." target="_blank" rel="noopener">💬 Falar agora</a>
+    <img src="img/capi_ajuda.webp" alt="">
+  </div>
+</section>
+
+<footer>
+  <span>© Tangible Gráfica Digital · Curitiba, PR</span>
+  <a href="privacidade.html">Política de Privacidade</a>
+</footer>
+</div>
+<a class="btn verde zap-fixo" href="https://wa.me/554191903937?text=Ol%C3%A1!%20Vim%20pelo%20site." target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">💬 WhatsApp</a>
+</body>
+</html>
